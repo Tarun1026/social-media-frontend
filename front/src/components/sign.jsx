@@ -7,14 +7,24 @@ export default function Signup() {
     password: "",
     userName: "",
   });
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
 
   const onSignup = async () => {
+    if (user.password !== confirmPassword) {
+      setPasswordsMatch(false);
+      return;
+    }
     try {
       const response = await axios.post("/backend", user);
       console.log("Signup Successful", response.data);
     } catch (error) {
       console.log("Signup failed", error.message);
     }
+  };
+  const handleConfirmPasswordChange=(e)=>{
+    setConfirmPassword(e.target.value);
+    setPasswordsMatch(true);
   };
 
   return (
@@ -86,11 +96,17 @@ export default function Signup() {
             <input
               type="password"
               id="confirmPassword"
+              value={confirmPassword}
+              onChange={handleConfirmPasswordChange}
               className="shadow-sm rounded-md px-3 py-2 w-full border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="Confirm your Password"
-              // Add onChange handler here
               required
             />
+            {!passwordsMatch && (
+              <p className="text-red-500 text-xs italic">
+                Passwords do not match.
+              </p>
+            )}
           </div>
 
           <button
