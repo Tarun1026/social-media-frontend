@@ -20,7 +20,7 @@ export default function Login() {
   return (
     <>
       <div className="bg-slate-700 h-screen flex justify-center item-center ">
-        <div className="bg-yellow-700 flex flex-col py-5 px-24 rounded-lg my-20">
+        <div className="bg-white flex flex-col py-5 px-24 rounded-lg my-20">
           <div className="text-center font-bold px-20 py-3">Login</div>
           <div className="mb-4 ">
             <label
@@ -56,11 +56,12 @@ export default function Login() {
               required
             />
           </div>
-          <Link to="/Signup">
-            <div className="font-medium ml-2 mb-3 block text-sm text-indigo-300">
-              Create an Account
+          
+            <div className="font-bold mb-3 block text-sm text-indigo-500">
+              Didn't have a account?
+              <Link to="/Signup" className="text-red-500 font-bold "> Signup</Link>
             </div>
-          </Link>
+            <div>
           <button
             type="Submit"
             onClick={onLogin}
@@ -69,6 +70,7 @@ export default function Login() {
           >
             Submit
           </button>
+          </div>
         </div>
       </div>
     </>

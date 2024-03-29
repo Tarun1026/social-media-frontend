@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Signup() {
   return (
     <>
@@ -11,32 +11,17 @@ function Signup() {
               htmlFor="Firstname"
               className="text-sm block font-medium text-grey-700"
             >
-              Firstname
+              Username
             </label>
             <input
               type="text"
-              id="Firstname"
+              id="Username"
               className="shadow-sm rounded-md px-3 py-2 w-full border border-grey-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo:500 "
-              placeholder="Enter your First name"
-            required
+              placeholder="Enter your Username"
+              required
             />
           </div>
           <div className="mb-4 ">
-            <label
-              htmlFor="Lastname"
-              className="text-sm block font-medium text-grey-700"
-            >
-              Lastname
-            </label>
-            <input
-              type="text"
-              id="Lastname"
-              className="shadow-sm rounded-md px-3 py-2 w-full border border-grey-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo:500 "
-              placeholder="Enter your Last name"
-            required
-            />
-            </div>
-            <div className="mb-4 ">
             <label
               htmlFor="Email"
               className="text-sm block font-medium text-grey-700"
@@ -48,9 +33,9 @@ function Signup() {
               id="Email"
               className="shadow-sm rounded-md px-3 py-2 w-full border border-grey-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo:500 "
               placeholder="Enter your Email-id"
-            required
+              required
             />
-            </div>
+          </div>
           <div className="mb-4 ">
             <label
               htmlFor="Password"
@@ -63,7 +48,6 @@ function Signup() {
               id="Password"
               className="shadow-sm rounded-md px-3 py-2 w-full border border-grey-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo:500 "
               placeholder="Enter your Password"
-            
             />
           </div>
           <div className="mb-4 ">
@@ -78,9 +62,24 @@ function Signup() {
               id="Password"
               className="shadow-sm rounded-md px-3 py-2 w-full border border-grey-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo:500 "
               placeholder="Enter your Password"
-            
             />
           </div>
+          
+            <div className="font-medium mb-3 block text-sm text-indigo-500">
+              Already have an account?
+              <Link to="/Login" className="text-red-500 font-bold">  Login</Link>
+            </div>
+            <div>
+            <button
+            type="Submit"
+            // onClick={onLogin}
+            className="bg-green-500 w-full justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium 
+          text-white hover:bg-green-700 focus:ring-2 focus:outline-none focus:ring-offset-2 focus:ring-green-500"
+          >
+            Submit
+          </button>
+            </div>
+         
         </div>
       </div>
     </>
