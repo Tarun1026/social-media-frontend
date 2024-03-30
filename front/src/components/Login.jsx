@@ -20,7 +20,7 @@ export default function Login() {
   };
   return (
     <>
-    <div className="bg-slate-600 h-screen flex justify-end tex-center  ">
+    <div className="bg-slate-600  flex justify-end tex-center  ">
       <div className="bg-green-100 flex flex-col py-10 mb-60 mt-30 px-24 rounded-lg my-20 mr-20">
         <div className="text-center font-bold px-20 py-4">Login</div>
         <div className="mb-4">

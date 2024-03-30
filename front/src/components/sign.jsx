@@ -6,6 +6,7 @@ export default function Signup() {
     email: "",
     password: "",
     userName: "",
+    fullname:"",
   });
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordsMatch, setPasswordsMatch] = useState(true);
@@ -16,7 +17,7 @@ export default function Signup() {
       return;
     }
     try {
-      const response=await axios.post("/users/register",{email:user.email,password:user.password,username:user.userName})
+      const response=await axios.post("/users/register",{email:user.email,password:user.password,username:user.userName,fullname:user.fullname})
       console.log("Signup Successful", response.data);
     } catch (error) {
       console.log("Signup failed", error.message);
@@ -30,8 +31,25 @@ export default function Signup() {
   return (
     <>
       <div className="bg-slate-600 h-screen flex justify-center item-center ">
-        <div className="bg-green-200 flex flex-col py-5 px-24 mb-40 rounded-lg my-20 ml-40">
+        <div className="bg-green-200 flex flex-col py-5 px-24 mb-20 rounded-lg my-20 ml-40">
           <div className="text-center font-bold px-20 py-3">Signup</div>
+          <div className="mb-4 ">
+            <label
+              htmlFor="fullname"
+              className="text-sm block font-medium text-gray-700"
+            >
+              Fullname
+            </label>
+            <input
+              type="text"
+              id="username"
+              value={user.userName}
+              onChange={(e) => setUser({ ...user, fullname: e.target.value })}
+              className="shadow-sm rounded-md px-3 py-2 w-full border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Enter your Username"
+              required
+            />
+          </div>
           <div className="mb-4 ">
             <label
               htmlFor="username"
