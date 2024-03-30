@@ -1,6 +1,6 @@
 import React,{useState} from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "../axios";
 export default function Login() {
   const [user, setUser] = useState({
     Username: "",
@@ -8,7 +8,7 @@ export default function Login() {
   });
   const onLogin = async () => {
     try {
-      const response=await axios.post("/Backend",user)
+      const response=await axios.post("/users/login",{username:user.Username,password:user.Password})
       console.log("Login Successful",response.data)
       alert("Login Successful")
 

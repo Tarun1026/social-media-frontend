@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import axios from "axios";
+import axios from "../axios.js";
 
 export default function Signup() {
   const [user, setUser] = useState({
@@ -16,7 +16,7 @@ export default function Signup() {
       return;
     }
     try {
-      const response = await axios.post("/backend", user);
+      const response=await axios.post("/users/register",{email:user.email,password:user.password,username:user.userName})
       console.log("Signup Successful", response.data);
     } catch (error) {
       console.log("Signup failed", error.message);
