@@ -29,8 +29,11 @@ function App() {
       path: "/profile",
       element: (
         <>
+        <div className="flex flex-row bg-slate-600">
           <Home />
           <Profile />
+
+          </div>
         </>
       ),
     },
