@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import axios from "../axios.js";
-
+import { Link } from "react-router-dom";
 export default function Signup() {
   const [user, setUser] = useState({
     email: "",
@@ -22,15 +22,15 @@ export default function Signup() {
       console.log("Signup failed", error.message);
     }
   };
-  const handleConfirmPasswordChange=(e)=>{
+  const handleConfirmPasswordChange = (e) => {
     setConfirmPassword(e.target.value);
     setPasswordsMatch(true);
   };
 
   return (
     <>
-      <div className="bg-slate-700 h-screen flex justify-center item-center ">
-        <div className="bg-white flex flex-col py-5 px-24 rounded-lg my-20">
+      <div className="bg-slate-600 h-screen flex justify-center item-center ">
+        <div className="bg-green-200 flex flex-col py-5 px-24 mb-40 rounded-lg my-20 ml-40">
           <div className="text-center font-bold px-20 py-3">Signup</div>
           <div className="mb-4 ">
             <label
@@ -108,10 +108,13 @@ export default function Signup() {
               </p>
             )}
           </div>
-
+          <div className="font-bold mb-3 block text-sm text-indigo-500">
+            Already have an account?
+            <Link to="/" className="text-red-500 font-bold ml-2">Login</Link>
+          </div>
           <button
             onClick={onSignup}
-            className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
           >
             Sign Up

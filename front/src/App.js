@@ -1,6 +1,8 @@
 import './App.css';
 import Login from './components/Login';
 import Signup from './components/sign';
+import Outer_nav from './components/outer_nav';
+import Home from './components/home';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 
 function App() {
@@ -8,6 +10,7 @@ function App() {
     path:"/",
     element:(
       <>
+      <Outer_nav/>
       <Login/>
     </>)
   },
@@ -21,6 +24,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router}/>
+      <Home/>
       
     </>
   );
