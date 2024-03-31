@@ -4,6 +4,7 @@ import Signup from "./components/sign";
 import Outer_nav from "./components/outer_nav";
 import Home from "./components/home";
 import Profile from "./components/profile/profile";
+import UpdateProfile from "./components/profile/update";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
@@ -14,6 +15,18 @@ function App() {
         <>
           <Outer_nav />
           <Login />
+        </>
+      ),
+    },
+    {
+      path: "/user",
+      element: (
+        <>
+          <div className="flex flex-row bg-slate-600">
+          <Home />
+          <Profile />
+
+          </div>
         </>
       ),
     },
@@ -31,7 +44,7 @@ function App() {
         <>
         <div className="flex flex-row bg-slate-600">
           <Home />
-          <Profile />
+          <UpdateProfile />
 
           </div>
         </>

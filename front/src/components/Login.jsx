@@ -12,6 +12,13 @@ export default function Login() {
       const response=await axios.post("/users/login",{username:user.Username,password:user.Password})
       console.log("Login Successful",response.data)
       alert("Login Successful")
+      const { accessToken } = response.data.data;
+
+      console.log("Access Token",accessToken)
+      document.cookie = `accessToken=${response.data.accessToken}; path=/`;
+
+
+      // window.location.href = "/profile";
 
     }
      catch (error) {

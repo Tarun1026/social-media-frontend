@@ -42,8 +42,8 @@ export default function Signup() {
             </label>
             <input
               type="text"
-              id="username"
-              value={user.userName}
+              id="fullname"
+              value={user.fullname}
               onChange={(e) => setUser({ ...user, fullname: e.target.value })}
               className="shadow-sm rounded-md px-3 py-2 w-full border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="Enter your Username"
