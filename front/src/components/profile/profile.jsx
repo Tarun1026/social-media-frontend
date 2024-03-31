@@ -57,15 +57,15 @@ export default function Profile() {
           </div>
           <div className="flex flex-row mt-4">
             <div className="flex flex-col">
-              <div className="font-bold pl-9 pr-4">{/* Number of posts */}</div>
+              <div className="font-bold pl-9 pr-4">0</div>
               <div className="font-bold pl-9 pr-4">Posts</div>
             </div>
             <div className="flex flex-col">
-              <div className="font-bold pl-9 pr-4">{/* Number of followers */}</div>
+              <div className="font-bold pl-9 pr-4">0</div>
               <div className="font-bold pl-9 pr-4">Followers</div>
             </div>
             <div className="flex flex-col">
-              <div className="font-bold pl-9 pr-4">{/* Number of following */}</div>
+              <div className="font-bold pl-9 pr-4">0</div>
               <div className="font-bold pl-9 pr-4">Following</div>
             </div>
           </div>
