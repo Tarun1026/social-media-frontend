@@ -15,7 +15,8 @@ export default function Login() {
       const { accessToken } = response.data.data;
 
       console.log("Access Token",accessToken)
-      document.cookie = `accessToken=${response.data.accessToken}; path=/`;
+      // document.cookie = `accessToken=${response.data.accessToken}; path=/`;
+      localStorage.setItem("accessToken",accessToken)
 
 
       // window.location.href = "/profile";

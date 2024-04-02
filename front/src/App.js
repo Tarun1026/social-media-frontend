@@ -6,7 +6,7 @@ import Home from "./components/home";
 import Profile from "./components/profile/profile";
 import UpdateProfile from "./components/profile/update";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import Detail from "./components/profile/detail";
 function App() {
   const router = createBrowserRouter([
     {
@@ -23,9 +23,8 @@ function App() {
       element: (
         <>
           <div className="flex flex-row bg-slate-600">
-          <Home />
-          <Profile />
-
+            <Home />
+            <Profile />
           </div>
         </>
       ),
@@ -34,7 +33,7 @@ function App() {
       path: "/Signup",
       element: (
         <>
-          <Signup/>
+          <Signup />
         </>
       ),
     },
@@ -42,10 +41,10 @@ function App() {
       path: "/profile",
       element: (
         <>
-        <div className="flex flex-row bg-slate-600">
-          <Home />
-          <UpdateProfile />
-
+          <div className="flex flex-row bg-slate-600">
+            <Home />
+            <UpdateProfile />
+            <Detail />
           </div>
         </>
       ),
