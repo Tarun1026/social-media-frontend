@@ -8,6 +8,7 @@ import UpdateProfile from "./components/profile/update";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProfilePage from "./components/profile/updating";
 
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -24,8 +25,10 @@ function App() {
       element: (
         <>
           <div className="flex flex-row bg-slate-600">
+
           <Home />
           <ProfilePage />
+
 
           </div>
         </>
@@ -35,7 +38,7 @@ function App() {
       path: "/Signup",
       element: (
         <>
-          <Signup/>
+          <Signup />
         </>
       ),
     },
@@ -43,10 +46,10 @@ function App() {
       path: "/profile",
       element: (
         <>
-        <div className="flex flex-row bg-slate-600">
-          <Home />
-          <UpdateProfile />
-
+          <div className="flex flex-row bg-slate-600">
+            <Home />
+            <UpdateProfile />
+            <Detail />
           </div>
         </>
       ),

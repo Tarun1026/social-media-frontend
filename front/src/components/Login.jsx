@@ -26,12 +26,11 @@ export default function Login() {
       
       console.log("Access Token", accessToken);
 
-      // Set access token in cookies with expiration of 1 day
+
       Cookies.set("accessToken", accessToken, { expires: 1 });
       navigate(`/profile/${user.Username}`);
 
-      // Redirect or navigate to profile page
-      // window.location.href = "/profile";
+
     } catch (error) {
       console.log("LoginFailed", error.message);
     }
