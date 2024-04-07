@@ -1,5 +1,6 @@
 import axios from "../../axios";
 import React, { useState } from "react";
+import Cookies from "js-cookie";
 
 export default function UpdateProfile() {
     const [profile, setProfile] = useState({
@@ -11,7 +12,7 @@ export default function UpdateProfile() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const accessToken = localStorage.getItem("accessToken");
+            const accessToken = Cookies.get("accessToken");
 
             if (!accessToken) {
                 console.log("Access token not found");
@@ -29,7 +30,7 @@ export default function UpdateProfile() {
                 },
             };
 
-            const response = await axios.post("/users/updateprofile", formData, config);
+            const response = await axios.post("users/updateprofile", formData, config);
             console.log("Profile updated successfully", response.data);
         } catch (error) {
             console.log("Error updating profile", error.message);
