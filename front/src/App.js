@@ -36,6 +36,20 @@ function App() {
       ),
     },
     {
+      path: "/profile/post",
+      element: (
+        <>
+          <div className="flex flex-row bg-slate-600">
+
+          <Home />
+          <UploadPost/>
+
+
+          </div>
+        </>
+      ),
+    },
+    {
       path: "/Signup",
       element: (
         <>
@@ -55,14 +69,14 @@ function App() {
         </>
       ),
     },
-    {
-      path:"/post",
-      element:(
-        <>
-        <UploadPost/>
-        </>
-      )
-    }
+    // {
+    //   path:"/post",
+    //   element:(
+    //     <>
+    //     <UploadPost/>
+    //     </>
+    //   )
+    // }
   ]);
   return (
     <>
