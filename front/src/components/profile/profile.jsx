@@ -174,11 +174,19 @@ const Profile = ({ onEditProfile }) => {
                   <div className="font-bold pl-9 pr-4">
                     {userProfile.followingCount}
                   </div>
-                  <div className="font-bold pl-9 pr-4">Followering</div>
+                  <div className="font-bold pl-9 pr-4">Following</div>
                 </div>
               </div>
             </div>
-
+            <div className="h-20 w-20">
+              <img src={userProfile.post[0].imgUrl} alt="post" />
+            </div>
+            <div className="h-20 w-20">
+              <img src={userProfile.post[1].imgUrl} alt="post" />
+            </div>
+            <div className="h-20 w-20">
+              <img src={userProfile.post[2].imgUrl} alt="post" />
+            </div>
       <div className="mt-4 ml-20">
         
           <div className="mb-4">

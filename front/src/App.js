@@ -7,6 +7,7 @@ import Profile from "./components/profile/profile";
 import UpdateProfile from "./components/profile/update";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProfilePage from "./components/profile/updating";
+import UploadPost from "./components/profile/uploadpost";
 
 
 function App() {
@@ -49,11 +50,19 @@ function App() {
           <div className="flex flex-row bg-slate-600">
             <Home />
             <UpdateProfile />
-            <Detail />
+            {/* <Detail /> */}
           </div>
         </>
       ),
     },
+    {
+      path:"/post",
+      element:(
+        <>
+        <UploadPost/>
+        </>
+      )
+    }
   ]);
   return (
     <>
