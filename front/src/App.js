@@ -25,7 +25,7 @@ function App() {
       path: "/profile/:username",
       element: (
         <>
-          <div className="flex flex-row bg-slate-600">
+          <div className="flex flex-row bg-black">
 
           <Home />
           <ProfilePage />

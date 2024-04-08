@@ -64,7 +64,7 @@ const Profile = ({ onEditProfile }) => {
       try {
         const data = await getFollowRequests();
         setFollowRequests(data);
-        setShowFollowRequests(data.some((request) => request.status === "pending")); // Set showFollowRequests based on pending requests
+        // setShowFollowRequests(data.some((request) => request.status === "pending")); // Set showFollowRequests based on pending requests
       } catch (error) {
         console.error("Error fetching follow requests:", error);
       }
@@ -105,22 +105,23 @@ const Profile = ({ onEditProfile }) => {
   };
 
   return (
-    <div>
+
+    <div className="">
       {userProfile ? (
         <>
-          <div className="ml-20 mt-20">
-            <div className="flex flex-row items-center">
+          <div className="ml-60  mt-20  text-white">
+            <div className="flex flex-row items-center mt-30 ">
               <img
                 src={userProfile.avatar || defaultpicture}
                 alt="profile"
-                className="w-24 h-24 rounded-full"
+                className="w-40 h-40 rounded-full"
               />
-              <div className="flex flex-col ml-4">
-                <div className="font-bold text-white">{profileUsername}</div>
+              <div className="flex flex-row ml-20 -mt-12 ">
+                <div className="font-bold text-white text-2xl font-normal mb-20">{profileUsername}</div>
                 {isOwnProfile ? (
-                  <div className="flex flex-row mt-2">
+                  <div className="flex flex-row mt-1">
                     <div
-                      className="text-white bg-black p-2 rounded-md"
+                      className="text-white  bg-white ml-4 text2xl text-green-900 mb-20 rounded-md"
                       onClick={onEditProfile}
                     >
                       Edit Profile
@@ -156,34 +157,35 @@ const Profile = ({ onEditProfile }) => {
               ) : null}
             </div>
 
-            <div>
-              <div className="flex flex-col mt-4">
-                <h3>Bio</h3>
-                <p>{userProfile.bio}</p>
-              </div>
-              <div className="flex flex-row mt-4">
-                <div className="flex flex-col">
-                  <div className="font-bold pl-9 pr-4">
+           <div>
+       
+              <div className="flex flex-row  ml-60 -mt-20 ">
+                <div className="flex flex-row -mt-7">
+                  <div className="font-bold  pr-2 ">
                     {userProfile.postCount}
                   </div>
-                  <div className="font-bold pl-9 pr-4">Post</div>
+                  <div className="font-bold ">Posts</div>
                 </div>
-                <div className="flex flex-col">
-                  <div className="font-bold pl-9 pr-4">
+                <div className="flex flex-row -mt-7">
+                  <div className="font-bold pl-9 pr-2">
                     {userProfile.followersCount}
                   </div>
-                  <div className="font-bold pl-9 pr-4">Followers</div>
+                  <div className="font-bold  pr-2">Followers</div>
                 </div>
-                <div className="flex flex-col">
-                  <div className="font-bold pl-9 pr-4">
+                <div className="flex flex-row -mt-7">
+                  <div className="font-bold pl-9 pr-2">
                     {userProfile.followingCount}
                   </div>
-                  <div className="font-bold pl-9 pr-4">Following</div>
+                  <div className="font-bold  pr-2">Following</div>
                 </div>
+              </div>
+              <div className="flex flex-col mt-2 ml-60">
+                {/* <h3>Bio</h3> */}
+                <p>{userProfile.bio}</p>
               </div>
             </div>
             <button
-              className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+              className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 mt-20"
               onClick={() => {
                 navigate("/profile/post");
               }}
@@ -192,12 +194,17 @@ const Profile = ({ onEditProfile }) => {
             </button>
           </div>
           <Post profileUsername={profileUsername} />
-
+          
         </>
-      ) : (
+        
+      ) 
+      : (
         <div>Loading...</div>
-      )}
-    </div>
+      )
+      }
+      
+      </div>
+   
   );
 };
 

@@ -46,8 +46,8 @@ export default function Detail() {
             <div className="flex flex-col ml-4">
               <div className="font-bold text-white">{userProfile.username}</div>
               <div className="flex flex-row mt-2">
-                <div className="text-white bg-black p-2 rounded-md">Edit Profile</div>
-                <div className="text-white bg-black p-2 rounded-md ml-4">Edit Profile</div>
+                <div className="text-white bg-black p-7 rounded-md">Ed Profile</div>
+                <div className="text-white bg-black p-2 rounded-md ml-4">E Profile</div>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function Detail() {
             </div>
             <div className="flex flex-col">
               <div className="font-bold pl-9 pr-4">0</div>
-              <div className="font-bold pl-9 pr-4">Followers</div>
+              <div className="font-bold pl-9 pr-4">Folljj</div>
             </div>
             <div className="flex flex-col">
               <div className="font-bold pl-9 pr-4">0</div>

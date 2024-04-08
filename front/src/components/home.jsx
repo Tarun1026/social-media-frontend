@@ -19,7 +19,7 @@ export default function Home() {
             {/* <li className="bottom-0  font-bold text-2xl">More</li> */}
           </ul>
         </div>
-        <div className="text-white   p-4 font-bold  text-2xl">More</div>
+        <div className="text-white   p-4 font-bold  text-2xl ">More</div>
         <div className="text-white   ml-4 font-bold  text-2xl">Threads</div>
         {/* <div className="text-red-400 bottom-0 p-4 font-bold  text-2xl">More</div> */}
       </div>
