@@ -1,7 +1,8 @@
 import React from "react";
 
-const PostView = ({ post, onClose }) => {
+const PostView = ({ post, onClose,username,avatar }) => {
   const { caption, imgUrl, likes, comments, user } = post;
+ 
 
   const handleClose = () => {
     if (onClose) onClose();
@@ -21,8 +22,10 @@ const PostView = ({ post, onClose }) => {
 
         <div className="w-1/3 h-full p-4 flex flex-col justify-between relative">
           <div>
-       
-            <h3 className="text-lg font-bold mb-2">{user}</h3>
+          <div className="flex items-center mb-2">
+              <img src={avatar} alt="Avatar" className="w-8 h-8 rounded-full mr-2" />
+              <h3 className="text-lg font-bold">{username}</h3>
+            </div>
       
             <div className="mt-4">
               <h4 className="font-bold">Comments</h4>

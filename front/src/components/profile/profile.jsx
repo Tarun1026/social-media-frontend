@@ -180,7 +180,7 @@ const Profile = ({ onEditProfile,posts }) => {
               Upload Post
             </button>
           </div>
-          <Post profileUsername={profileUsername} />
+          <Post profileUsername={profileUsername} avatar={userProfile.avatar}/>
 
         </>
       ) : (

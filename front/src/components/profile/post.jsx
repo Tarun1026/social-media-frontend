@@ -5,7 +5,7 @@ import PostView from "./postview";
 
 const accessToken = Cookies.get("accessToken");
 
-const Post = ({ profileUsername}) => {
+const Post = ({ profileUsername,avatar}) => {
   const [posts, setPosts] = useState([]);
   const [selectedPost, setSelectedPost] = useState(null);
   const [showPostDetail, setShowPostDetail] = useState(false);
@@ -64,7 +64,7 @@ const Post = ({ profileUsername}) => {
           <p>No posts available</p>
         )}
       </div>
-      {showPostDetail && <PostView post={selectedPost}  onClose={handleClosePost}/>} 
+      {showPostDetail && <PostView post={selectedPost} username={profileUsername} avatar={avatar} onClose={handleClosePost}/>} 
     </div>
   );
 };
