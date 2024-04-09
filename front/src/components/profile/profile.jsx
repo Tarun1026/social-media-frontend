@@ -119,9 +119,9 @@ const Profile = ({ onEditProfile,posts }) => {
                     </div>
                   </div>
                 ) : (
-                  <div className="flex flex-row mt-2">
+                  <div className="flex flex-row ">
                     <div
-                      className="text-white bg-blue-400 p-2 rounded-md"
+                      className="text-white  bg-blue-400 ml-7 font-bold text-1xl p-1 px-4 text-black mb-20 rounded-md"
                       onClick={handleFollow}
                     >
                       Follow
@@ -187,7 +187,15 @@ const Profile = ({ onEditProfile,posts }) => {
 
           
 
+          <div className="ml-60">
+            if ({userProfile.post}==false) {
+              <div></div>
+              
+            }
+            else{
           <Post profileUsername={profileUsername} avatar={userProfile.avatar}/>
+}
+          </div>
 
         </>
         

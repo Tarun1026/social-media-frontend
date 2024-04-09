@@ -56,7 +56,7 @@ const Post = ({ profileUsername,avatar}) => {
                 <img
                   src={post.imgUrl}
                   alt="post"
-                  className="w-full h-40 object-cover"
+                  className="w-full h-40 object-fit-contain"
                   onClick={() => handlePostClick(post)}
                 />
                 
