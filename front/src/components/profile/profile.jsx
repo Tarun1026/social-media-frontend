@@ -10,10 +10,11 @@ import { useNavigate } from "react-router-dom";
 import getFollowRequests from "./getfollowrequest";
 import Post from "./post";
 
+
 const defaultpicture =
   "https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Download-Image.png";
 
-const Profile = ({ onEditProfile }) => {
+const Profile = ({ onEditProfile,posts }) => {
   const [isFollowing, setIsFollowing] = useState(false);
   const [userProfile, setuserProfile] = useState(null);
   const [loggedInUsername, setLoggedInUsername] = useState(null);
@@ -24,6 +25,7 @@ const Profile = ({ onEditProfile }) => {
   const [followRequests, setFollowRequests] = useState([]);
   const [caption, setCaption] = useState("");
   const [image, setImage] = useState(null);
+
   const accessToken = Cookies.get("accessToken");
   const navigate = useNavigate();
 
@@ -63,15 +65,18 @@ const Profile = ({ onEditProfile }) => {
     const fetchFollowRequests = async () => {
       try {
         const data = await getFollowRequests();
-        setFollowRequests(data);
-        // setShowFollowRequests(data.some((request) => request.status === "pending")); // Set showFollowRequests based on pending requests
+
+        console.log(data);
+        setFollowRequests(data.data);
+        setShowFollowRequests(data.data.some((request) => request.status === "pending")); 
+
       } catch (error) {
         console.error("Error fetching follow requests:", error);
       }
     };
 
     fetchFollowRequests();
-  }, [accessToken]); // Fetch follow requests whenever access token changes
+  }, [accessToken]); 
 
   const isOwnProfile = loggedInUsername === profileUsername;
 
@@ -87,23 +92,9 @@ const Profile = ({ onEditProfile }) => {
     setShowFollowRequests(!showFollowRequests);
   };
 
-  const handleCaptionChange = (e) => {
-    setCaption(e.target.value);
-  };
-
-  const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
-  };
-
-  const handleUploadPost = async () => {
-    try {
-      const data = await uploadPost(caption, image, accessToken);
-      console.log(data.data);
-    } catch (error) {
-      console.error("Error uploading post:", error);
-    }
-  };
-
+ 
+ 
+ 
   return (
 
     <div className="">
@@ -193,8 +184,11 @@ const Profile = ({ onEditProfile }) => {
               Upload Post
             </button>
           </div>
-          <Post profileUsername={profileUsername} />
+
           
+
+          <Post profileUsername={profileUsername} avatar={userProfile.avatar}/>
+
         </>
         
       ) 
