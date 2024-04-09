@@ -13,7 +13,7 @@ const PostView = ({ post, onClose,username,avatar }) => {
       <div className="w-3/5 h-4/5 bg-white rounded-lg overflow-hidden flex">
        
         <div className="w-2/3 h-full relative">
-          <img src={imgUrl} alt="Post" className="object-cover w-full h-full" />
+          <img src={imgUrl} alt="Post" className="object-fit-content w-full h-full" />
        
           <p className="absolute bottom-0 left-0 right-0 text-md font-bold mb-2 p-4 bg-white">{caption}</p>
          
