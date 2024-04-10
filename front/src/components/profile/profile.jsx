@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "../../axios";
-import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from "jwt-decode"
 import Cookies from "js-cookie";
 import followUser from "./follow";
 import FollowRequestComponent from "./followcomponent";
@@ -14,7 +14,7 @@ import Post from "./post";
 const defaultpicture =
   "https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Download-Image.png";
 
-const Profile = ({ onEditProfile,posts }) => {
+const Profile = ({ onEditProfile}) => {
   const [isFollowing, setIsFollowing] = useState(false);
   const [userProfile, setuserProfile] = useState(null);
   const [loggedInUsername, setLoggedInUsername] = useState(null);
@@ -25,6 +25,7 @@ const Profile = ({ onEditProfile,posts }) => {
   const [followRequests, setFollowRequests] = useState([]);
   const [caption, setCaption] = useState("");
   const [image, setImage] = useState(null);
+  const [posts, setPosts] = useState([]); 
 
   const accessToken = Cookies.get("accessToken");
   const navigate = useNavigate();
@@ -51,8 +52,10 @@ const Profile = ({ onEditProfile,posts }) => {
           null,
           config
         );
+        console.log(response.data);
         setprofileUserID(response.data.data._id);
         setuserProfile(response.data.data);
+        setPosts(response.data.data.post);
       } catch (error) {
         console.error("Error fetching profile data:", error);
       }
@@ -61,22 +64,22 @@ const Profile = ({ onEditProfile,posts }) => {
     fetchUserProfile();
   }, [profileUsername, accessToken]);
 
-  useEffect(() => {
-    const fetchFollowRequests = async () => {
-      try {
-        const data = await getFollowRequests();
+  // useEffect(() => {
+  //   const fetchFollowRequests = async () => {
+  //     try {
+  //       const data = await getFollowRequests();
 
-        console.log(data);
-        setFollowRequests(data.data);
-        setShowFollowRequests(data.data.some((request) => request.status === "pending")); 
+  //       console.log(data);
+  //       setFollowRequests(data.data);
+  //       setShowFollowRequests(data.data.some((request) => request.status === "pending")); 
 
-      } catch (error) {
-        console.error("Error fetching follow requests:", error);
-      }
-    };
+  //     } catch (error) {
+  //       console.error("Error fetching follow requests:", error);
+  //     }
+  //   };
 
-    fetchFollowRequests();
-  }, [accessToken]); 
+  //   fetchFollowRequests();
+  // }, [accessToken]); 
 
   const isOwnProfile = loggedInUsername === profileUsername;
 
@@ -188,13 +191,11 @@ const Profile = ({ onEditProfile,posts }) => {
           
 
           <div className="ml-60">
-            if ({userProfile.post}==false) {
-              <div></div>
-              
-            }
-            else{
-          <Post profileUsername={profileUsername} avatar={userProfile.avatar}/>
-}
+          {userProfile.post === false ? (
+    <div></div>
+  ) : (
+    <Post profileUsername={profileUsername} posts={posts} avatar={userProfile.avatar}/>
+  )}
           </div>
 
         </>
