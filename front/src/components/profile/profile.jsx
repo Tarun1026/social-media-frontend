@@ -115,7 +115,7 @@ const Profile = ({ onEditProfile}) => {
                 {isOwnProfile ? (
                   <div className="flex flex-row mt-1">
                     <div
-                      className="text-white  bg-blue-200 ml-4 text2xl text-green-800 font-bold mb-20 rounded-md"
+                      className="text-white  bg-blue-400 px-2 ml-4 text2xl text-green-800 font-bold mb-20 rounded-md"
                       onClick={onEditProfile}
                     >
                       Edit Profile
