@@ -33,7 +33,7 @@ const FollowRequestsComponent = () => {
   useEffect(() => {
     const fetchSenderDetails = async (senderId) => {
       try {
-        const response = await axios.get(`/users/profile/${senderId}`);
+        const response = await axios.get(`/users/profile/${followRequests.username}`);
         setSenderDetails(response.data.data);
       } catch (error) {
         console.error('Error fetching sender details:', error);
@@ -69,7 +69,8 @@ const FollowRequestsComponent = () => {
             <div key={request._id} className="mb-4">
               <div className="flex items-center mb-2">
                 <img src={senderDetails[request.sender]?.avatar} alt="Avatar" className="w-8 h-8 rounded-full mr-2" />
-                <p className="font-semibold">{senderDetails[request.sender]?.username}</p>
+                <p className="font-semibold text-black">{senderDetails[request.sender]?.username}</p>
+                <p className="font-semibold text-black">{request._id}</p>
               </div>
               <p><span className="font-semibold">Status:</span> {request.status}</p>
               <button onClick={() => handleAcceptRequest(request._id)} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">

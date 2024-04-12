@@ -3,7 +3,7 @@ import axios from '../../axios';
 
 const useFollowRequests = () => {
   const [followRequests, setFollowRequests] = useState([]);
-  const [showFollowRequests, setShowFollowRequests] = useState(true); // Set initial state to true to show the button
+  const [showFollowRequests, setShowFollowRequests] = useState(true);
   const accessToken = document.cookie.split('; ').find(row => row.startsWith('accessToken=')).split('=')[1];
 
   useEffect(() => {
@@ -14,8 +14,8 @@ const useFollowRequests = () => {
             Authorization: `Bearer ${accessToken}`,
           },
         });
-        const data = response.data.data;
-        setFollowRequests(data);
+        console.log(response.data);
+        setFollowRequests(response.data.data);
       } catch (error) {
         console.error('Error fetching follow requests:', error);
       }
