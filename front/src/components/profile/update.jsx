@@ -6,7 +6,7 @@ export default function UpdateProfile() {
     const [profile, setProfile] = useState({
         username: "",
         bio: "",
-        avatar: null, // Change to null initially
+        avatar: null, 
     });
 
     const handleSubmit = async (e) => {
@@ -19,14 +19,14 @@ export default function UpdateProfile() {
                 return;
             }
 
-            const formData = new FormData(); // Create form data object
+            const formData = new FormData();
             formData.append("bio", profile.bio);
             formData.append("avatar", profile.avatar);
 
             const config = {
                 headers: {
                     Authorization: `Bearer ${accessToken}`,
-                    "Content-Type": "multipart/form-data", // Set content type for file upload
+                    "Content-Type": "multipart/form-data", 
                 },
             };
 
@@ -38,14 +38,13 @@ export default function UpdateProfile() {
     };
 
     const handleFileChange = (e) => {
-        setProfile({ ...profile, avatar: e.target.files[0] }); // Set avatar to the selected file
+        setProfile({ ...profile, avatar: e.target.files[0] });
     };
 
     return (
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-2xl font-bold mb-4">Update Profile</h1>
             <form onSubmit={handleSubmit}>
-                {/* Username input */}
                 <div className="mb-4">
                     <label htmlFor="username" className="block text-sm font-medium text-gray-700">
                         Username
@@ -59,7 +58,6 @@ export default function UpdateProfile() {
                         required
                     />
                 </div>
-                {/* Bio textarea */}
                 <div className="mb-4">
                     <label htmlFor="bio" className="block text-sm font-medium text-gray-700">
                         Bio
@@ -73,7 +71,6 @@ export default function UpdateProfile() {
                         required
                     ></textarea>
                 </div>
-                {/* Profile picture input */}
                 <div className="mb-4">
                     <label htmlFor="profilePicture" className="block text-sm font-medium text-gray-700">
                         Profile Picture
@@ -82,12 +79,11 @@ export default function UpdateProfile() {
                         type="file"
                         id="profilePicture"
                         accept="image/*"
-                        onChange={handleFileChange} // Call handleFileChange when file is selected
+                        onChange={handleFileChange}
                         className="mt-1 block w-full"
                         required
                     />
                 </div>
-                {/* Submit button */}
                 <button
                     type="submit"
                     className="bg-indigo-500 text-white font-semibold py-2 px-4 rounded hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"

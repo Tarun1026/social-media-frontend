@@ -31,6 +31,7 @@ export default function UploadPost() {
             };
 
             const response = await axios.post("users/upload-post", formData, config);
+            alert("Post Uploaded Success")
             console.log("Post Updated successfully", response.data);
         } catch (error) {
             console.log("Error updating post", error.message);

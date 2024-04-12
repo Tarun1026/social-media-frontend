@@ -8,6 +8,8 @@ import UpdateProfile from "./components/profile/update";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProfilePage from "./components/profile/updating";
 import UploadPost from "./components/profile/uploadpost";
+import Indexpage from "./components/main/indexpage";
+import UserProfileSearch from "./components/main/search";
 
 
 function App() {
@@ -46,6 +48,24 @@ function App() {
 
 
           </div>
+        </>
+      ),
+    },
+    {
+      path: "/post",
+      element: (
+        <>
+   <div className="flex flex-row bg-black">
+    <UserProfileSearch/>
+   <Home className="sticky top-0 h-screen z-10 w-1/4" /> 
+   <div className=" w-3/4">
+        <div className="overflow-y-auto h-screen">
+          <Indexpage />
+        </div>
+      </div>
+    </div>
+
+
         </>
       ),
     },
