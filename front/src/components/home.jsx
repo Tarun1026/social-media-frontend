@@ -8,7 +8,8 @@ export default function Home() {
         <div className="font-bold text-4xl text-indigo-600 px-4">Snap Sphere</div>
         <div className="text-white px-4">
           <ul className="py-12">
-            <li className="py-3 font-bold  text-2xl">Home</li>
+            <li className="py-3 font-bold  text-2xl" onClick={
+              navigate('/post')}>Home</li>
             <li className="py-3 font-bold text-2xl" onClick={
               navigate('/search')
             }>Search</li>
