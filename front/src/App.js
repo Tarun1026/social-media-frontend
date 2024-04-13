@@ -78,6 +78,17 @@ function App() {
       ),
     },
     {
+      path: "/Search",
+      element: (
+        <>
+        <div className="flex flex-row">
+        <Home />
+        <UserProfileSearch />
+        </div>
+        </>
+      ),
+    },
+    {
       path: "/profile",
       element: (
         <>
