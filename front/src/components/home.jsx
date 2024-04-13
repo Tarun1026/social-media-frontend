@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex flex-col bg-black h-screen">
@@ -8,7 +9,9 @@ export default function Home() {
         <div className="text-white px-4">
           <ul className="py-12">
             <li className="py-3 font-bold  text-2xl">Home</li>
-            <li className="py-3 font-bold text-2xl">Search</li>
+            <li className="py-3 font-bold text-2xl" onClick={()=>{
+              navigate('/search')
+            }}>Search</li>
             <li className="py-3 font-bold text-2xl">Reels</li>
             <li className="py-3 font-bold text-2xl">Notifications</li>
             <li className="py-3 font-bold text-2xl">Messages</li>
