@@ -12,6 +12,7 @@ const defaultpicture =
   "https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Download-Image.png";
 
 const Profile = ({ onEditProfile }) => {
+
   const [userProfile, setuserProfile] = useState(null);
   const [loggedInUsername, setLoggedInUsername] = useState(null);
   const [loggedInUserID, setLoggedInUserID] = useState(null);

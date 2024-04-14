@@ -3,7 +3,7 @@ import React from 'react'
 export default function Outer_nav() {
   return (
     <>
-    <div className="flex flex-row bg-grey-600 " >
+    <div className=" hidden bg-grey-600 sm:flex flex-row" >
         <div className="mr-45"></div>
         <div className="mx-8 my-4 font-bold ">About us</div>
         <div className="mx-8 my-4 font-bold ">Home</div>
