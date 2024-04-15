@@ -10,9 +10,11 @@ import ProfilePage from "./components/profile/updating";
 import UploadPost from "./components/profile/uploadpost";
 import Indexpage from "./components/main/indexpage";
 import UserProfileSearch from "./components/main/search";
+import ProtectedRoute from "./components/Auth";
 
 
 function App() {
+  <ProtectedRoute/>
   const router = createBrowserRouter([
     {
       path: "/",

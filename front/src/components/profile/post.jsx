@@ -50,7 +50,7 @@ const Post = ({ profileUsername,avatar}) => {
       <div>
         <h2 className="text-lg font-bold mb-4">Posts</h2>
         {posts && length > 0 ? (
-          <div className="grid grid-cols-3 gap-0">
+          <div className="grid grid-cols-2 gap-0 sm:grid-cols-3">
             {posts.map(post => (
               <div key={post._id} className="p-1 border border-gray-300">
                 <img

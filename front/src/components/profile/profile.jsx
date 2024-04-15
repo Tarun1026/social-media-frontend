@@ -80,7 +80,7 @@ const Profile = ({ onEditProfile }) => {
         <div className="">
         {userProfile ? (
           <>
-            <div className="ml-40  mt-20  text-white">
+            <div className="ml-10  mt-20  text-white sm:ml-40">
               <div className="flex flex-row items-center mt-30 ">
                 <img
                   src={userProfile.avatar || defaultpicture}
@@ -153,7 +153,7 @@ const Profile = ({ onEditProfile }) => {
               </div>
             </div>
 
-            <div className="ml-40">
+            <div className="ml-10 sm:ml-40">
               {userProfile.post === false ? (
                 <div></div>
               ) : (
