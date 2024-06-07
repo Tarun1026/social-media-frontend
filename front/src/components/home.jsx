@@ -3,7 +3,9 @@ import React from "react";
 export default function Home() {
   return (
     <>
+    <div className="flex flex-row">
       <div className="flex flex-col bg-black h-screen">
+      
         <div className="font-bold text-4xl text-indigo-600 px-4">Snap Sphere</div>
         <div className="text-white px-4">
           <ul className="py-12">
@@ -22,6 +24,10 @@ export default function Home() {
         <div className="text-white   p-4 font-bold  text-2xl ">More</div>
         <div className="text-white   ml-4 font-bold  text-2xl">Threads</div>
         {/* <div className="text-red-400 bottom-0 p-4 font-bold  text-2xl">More</div> */}
+      </div>
+      <div className="bg-white pl-0.5 h-screen ">
+
+      </div>
       </div>
     </>
   );

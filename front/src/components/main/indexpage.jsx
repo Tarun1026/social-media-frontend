@@ -25,19 +25,19 @@ function Indexpage() {
                             Authorization: `Bearer ${accessToken}`,
                         },
                     };
-                    console.log("hello");
-                    const followersrequest = await axios.get(`/users/get-followers/${loggedInUsername}`,  config);
-                    console.log(followersrequest.data);
-                    const followers = followersrequest.data.followers;
-                    console.log('followers', followers);
-                    // console.log(followers);
+                    // console.log("hello");
+                    // const followersrequest = await axios.get(`/users/get-followers/${loggedInUsername}`,  config);
+                    // console.log(followersrequest.data);
+                    // const followers = followersrequest.data.followers;
+                    // console.log('followers', followers);
+                    // // console.log(followers);
                     const followingrequest = await axios.get(`/users/get-followings/${loggedInUsername}`,  config);
                     console.log(followingrequest.data);
                     const following = followingrequest.data.following;
                     console.log('following',following);
-                    const allUsers = [...followers, ...following];
+                    const allUsers = [...following];
                     const postsPromises = allUsers.map(async (user) => {
-                        const username = user.follower ? user.follower.username : user.following.username;
+                        const username =  user.following.username;
                         const profileRequest = await axios.post(`/users/profile/${username}`, null, config);
                         setUsername(profileRequest.data.data.username);
                         return profileRequest.data.data.post;
@@ -56,13 +56,13 @@ function Indexpage() {
 
     return (
         <>
- <div className="bg-black flex justify-center items-center flex-col w-full">
+ <div className="bg-black flex justify-center items-center flex-col ">
   <div className="max-h-screen overflow-y-auto"> 
     {posts.map((post) => (
       <div className="text-white font-bold flex justify-center items-center" key={post._id}>
         <div className="w-1/3 h-2/3 p-4 flex flex-col justify-between relative">
           <h2 className='text-white'>{username}</h2>
-          <img src={post.imgUrl} alt="Post" className="object-fit-content w-full h-full" />
+          <img src={post.imgUrl} alt="Post" className="object-fit-content " />
         </div>
       </div>
     ))}

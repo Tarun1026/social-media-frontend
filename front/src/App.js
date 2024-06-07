@@ -56,14 +56,14 @@ function App() {
       element: (
         <>
    <div className="flex flex-row bg-black">
-    <UserProfileSearch/>
-   <Home className="sticky top-0 h-screen z-10 w-1/4" /> 
-   <div className=" w-3/4">
+    {/* <UserProfileSearch/> */}
+   <Home  /> 
+   
         <div className="overflow-y-auto h-screen">
           <Indexpage />
         </div>
       </div>
-    </div>
+    
 
 
         </>
@@ -89,6 +89,16 @@ function App() {
         </>
       ),
     },
+      {
+      path:"/search",
+      element:(
+        <>
+        <UserProfileSearch/>
+        </>
+
+      )
+      },
+    
     // {
     //   path:"/post",
     //   element:(
