@@ -10,9 +10,11 @@ import ProfilePage from "./components/profile/updating";
 import UploadPost from "./components/profile/uploadpost";
 import Indexpage from "./components/main/indexpage";
 import UserProfileSearch from "./components/main/search";
+import ProtectedRoute from "./components/Auth";
 
 
 function App() {
+  <ProtectedRoute/>
   const router = createBrowserRouter([
     {
       path: "/",
@@ -51,29 +53,23 @@ function App() {
         </>
       ),
     },
-    {
-      path: "/post",
-      element: (
-        <>
-   <div className="flex flex-row bg-black">
-    {/* <UserProfileSearch/> */}
-   <Home  /> 
-   
-        <div className="overflow-y-auto h-screen">
-          <Indexpage />
-        </div>
-      </div>
     
-
-
-        </>
-      ),
-    },
     {
       path: "/Signup",
       element: (
         <>
           <Signup />
+        </>
+      ),
+    },
+    {
+      path: "/Search",
+      element: (
+        <>
+        <div className="flex flex-row">
+        <Home />
+        <UserProfileSearch />
+        </div>
         </>
       ),
     },

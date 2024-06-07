@@ -12,6 +12,7 @@ const defaultpicture =
   "https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Download-Image.png";
 
 const Profile = ({ onEditProfile }) => {
+
   const [userProfile, setuserProfile] = useState(null);
   const [loggedInUsername, setLoggedInUsername] = useState(null);
   const [loggedInUserID, setLoggedInUserID] = useState(null);
@@ -80,7 +81,7 @@ const Profile = ({ onEditProfile }) => {
         <div className="">
         {userProfile ? (
           <>
-            <div className="ml-40  mt-20  text-white">
+            <div className="ml-10  mt-20  text-white sm:ml-40">
               <div className="flex flex-row items-center mt-30 ">
                 <img
                   src={userProfile.avatar || defaultpicture}
@@ -154,7 +155,7 @@ const Profile = ({ onEditProfile }) => {
               </div>
             </div>
 
-            <div className="ml-40">
+            <div className="ml-10 sm:ml-40">
               {userProfile.post === false ? (
                 <div></div>
               ) : (
